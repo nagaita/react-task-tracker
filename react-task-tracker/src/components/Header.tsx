@@ -4,10 +4,12 @@ type Props = {
     title: string
 }
 
-const Header: React.FC<Props> = (props) => {
+const Header: React.FC<Props> = ({ title }) => {
     return (
         <header>
-            <h1>{props.title}</h1>
+            <h1 style={{ color: 'red', backgroundColor: 'black'}}>
+                {title}
+            </h1>
         </header>
     )
 }
