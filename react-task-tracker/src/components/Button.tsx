@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Button = () => {
+type Props = {
+    color: string,
+    text: string
+}
+
+const Button: React.FC<Props> = ({ color, text }) => {
     return (
-        <button className='btn'>Add</button>
+        <button style={{ backgroundColor: color }} className='btn'>
+            {text}
+        </button>
     )
 }
 

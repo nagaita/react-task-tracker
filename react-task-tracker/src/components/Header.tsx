@@ -9,7 +9,7 @@ const Header: React.FC<Props> = ({ title }) => {
     return (
         <header className='header'>
             <h1 >{title}</h1>
-            <Button />
+            <Button color='red' text='Add' />
         </header>
     )
 }
