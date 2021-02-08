@@ -6,10 +6,13 @@ type Props = {
 }
 
 const Header: React.FC<Props> = ({ title }) => {
+    const onClick = () => {
+        console.log('Click')
+    }
     return (
         <header className='header'>
             <h1 >{title}</h1>
-            <Button text='Add' />
+            <Button text='Add' onClick={onClick} />
         </header>
     )
 }
