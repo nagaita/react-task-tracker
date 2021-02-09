@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaTimes } from 'react-icons/fa'
 
 type Props = {
     task: Task
@@ -14,7 +15,7 @@ type Task = {
 const Task: React.FC<Props> = ({ task }) => {
     return (
         <div className='task'>
-            <h3 key={task.id}>{task.text}</h3>
+            <h3 key={task.id}>{task.text} <FaTimes style={{ color: 'red', cursor: 'pointer' }} /></h3>
             <p>{task.day}</p>
         </div>
     )
