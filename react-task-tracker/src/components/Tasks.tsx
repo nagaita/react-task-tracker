@@ -1,15 +1,23 @@
 import Task from './Task'
 
 type Props = {
-    tasks: Task[]
+    tasks: Task[],
+    onDelete: (id: number) => void
 }
 
-const Tasks: React.FC<Props> = ({ tasks }) => {
+const Tasks: React.FC<Props> = ({ tasks, onDelete }) => {
+    let taskElement
+    if (tasks.length == 0) {
+        taskElement = <p>No tasks to show</p>
+    } else {
+        taskElement = tasks.map((task) => (
+            <Task key={task.id} task={task} onDelete={onDelete} />
+        ))
+    }
+
     return (
         <div>
-            {tasks.map((task) => (
-                <Task key={task.id} task={task} />
-            ))}
+            {taskElement}                          
         </div>
     )
 }
