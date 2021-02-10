@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header'
 import Tasks from './components/Tasks'
+import TaskForm from './components/TaskForm'
 import { useState } from 'react'
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
   return (
     <div className="container">
       <Header title="Task Tracker" />
+      <TaskForm />
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleTaskReminder} />
     </div>
   );
