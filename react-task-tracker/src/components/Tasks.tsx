@@ -1,7 +1,7 @@
 import Task from './Task'
 
 type Props = {
-    tasks: Task[],
+    tasks: Task[]
     onDelete: (id: number) => void
     onToggle: (id: number) => void
 }

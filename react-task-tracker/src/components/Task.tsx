@@ -2,7 +2,7 @@ import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 
 type Props = {
-    task: Task,
+    task: Task
     onDelete: (id: number) => void
     onToggle: (id: number) => void
 }

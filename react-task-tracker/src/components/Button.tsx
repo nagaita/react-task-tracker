@@ -1,8 +1,8 @@
 import React from 'react'
 
 type Props = {
-    color?: string,
-    text: string,
+    color?: string
+    text: string
     onClick: () => void
 }
 
