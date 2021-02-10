@@ -27,6 +27,12 @@ function App() {
     },
   ])
 
+  const addTask = (task: {text: string, day: string, reminder: boolean}) => {
+    const currentMaxId = tasks.map((task) => task.id).reduce((maxId, currentId) => Math.max(maxId, currentId))
+    const newTask = { id: currentMaxId + 1, ...task}
+    setTasks([...tasks, newTask])
+  }
+
   const deleteTask = (id: number) =>  {
     setTasks(tasks.filter((task) => task.id !== id))
   }
@@ -38,7 +44,7 @@ function App() {
   return (
     <div className="container">
       <Header title="Task Tracker" />
-      <TaskForm />
+      <TaskForm onAdd={addTask}/>
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleTaskReminder} />
     </div>
   );
