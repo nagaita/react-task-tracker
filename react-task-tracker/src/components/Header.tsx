@@ -3,16 +3,14 @@ import Button from './Button'
 
 type Props = {
     title: string
+    onAdd: () => void
 }
 
-const Header: React.FC<Props> = ({ title }) => {
-    const onClick = () => {
-        console.log('Click')
-    }
+const Header: React.FC<Props> = ({ title, onAdd }) => {
     return (
         <header className='header'>
             <h1 >{title}</h1>
-            <Button text='Add' onClick={onClick} />
+            <Button text='Add' onClick={onAdd} />
         </header>
     )
 }

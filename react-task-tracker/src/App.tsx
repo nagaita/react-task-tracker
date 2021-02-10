@@ -6,6 +6,7 @@ import TaskForm from './components/TaskForm'
 import { useState } from 'react'
 
 function App() {
+  const [showsAddButton, setShowsAddButton] = useState(false)
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -41,10 +42,14 @@ function App() {
     setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder} : task))
   }
 
+  const toggleTaskForm = () => {
+    setShowsAddButton(!showsAddButton)
+  }
+
   return (
     <div className="container">
-      <Header title="Task Tracker" />
-      <TaskForm onAdd={addTask}/>
+      <Header title="Task Tracker" onAdd={toggleTaskForm} />
+      {showsAddButton && <TaskForm onAdd={addTask}/>}
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleTaskReminder} />
     </div>
   );
